@@ -6,6 +6,7 @@ use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Schema;
 
 class DatabaseSeeder extends Seeder
 {
@@ -37,10 +38,12 @@ User::create([
                                 'password'          => Hash::make('password'),
                                ]);
 
-
         $this->call(TipoDocumentoSeeder::class);
         $this->call(ClientasSeeder::class);
         $this->call(TrabajoRealizadoSeeder::class);
+
+        Schema::enableForeignKeyConstraints();
+
 
     }
 }

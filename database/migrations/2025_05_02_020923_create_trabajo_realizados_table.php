@@ -13,11 +13,13 @@ return new class extends Migration
     {
         Schema::create('trabajo_realizados', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('clienta_id')->nullable()->references('id')->on('clientas');
+            $table->string('clienta_id')->references('id')->on('clientas');
             $table->date('fecha');
             $table->string('descripcion')->nullable();
 
             $table->timestamps();
+            $table->softDeletes();
+
         });
     }
 

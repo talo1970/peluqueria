@@ -26,6 +26,7 @@ return new class extends Migration
             $table->date('fecha_ingreso')->nullable();
             $table->boolean('estado')->nullable();
             $table->boolean('favorita')->nullable();
+            $table->string('observacion')->nullable();
 
             $table->timestamps();
             $table->softDeletes();

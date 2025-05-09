@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\TipoDocumento;
+use Database\Factories\TipoDocumentoFactory;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -13,9 +14,9 @@ class TipoDocumentoSeeder extends Seeder
      */
     public function run(): void
     {
-        TipoDocumento::factory()->count(10)->create();
-        /*
-        $tipos = [
+       // TipoDocumento::factory()->count(10)->create();
+
+       /* $tipos = [
             ['nombre' => 'DNI'],
             ['nombre' => 'CI'],
             ['nombre' => 'DU'],
@@ -26,7 +27,18 @@ class TipoDocumentoSeeder extends Seeder
 
         foreach ($tipos as $tipo) {
             TipoDocumento::create($tipo);
-        }
-        */
+        }*/
+        TipoDocumento::create([
+                                  'nombre' => 'DNI',
+                              ]);
+        TipoDocumento::create([
+                                  'nombre' => 'LC',
+                              ]);
+        TipoDocumento::create([
+                                  'nombre' => 'LE',
+                              ]);
+        TipoDocumento::create([
+                                  'nombre' => 'N/D',
+                              ]);
     }
 }

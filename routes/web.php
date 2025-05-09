@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use Livewire\Volt\Volt;
+use \App\Http\Controllers\ClientasController;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -19,4 +21,6 @@ Route::middleware(['auth'])->group(function () {
     Volt::route('settings/appearance', 'settings.appearance')->name('settings.appearance');
 });
 
+    Route::get('/clientas', [ClientasController::class, 'index'])->name('clientas');
 require __DIR__.'/auth.php';
+
